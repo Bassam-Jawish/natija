@@ -1,0 +1,17 @@
+{
+  "name": "@natija/agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Natija Lab Agent: talks to analyzers on site and forwards results to the platform",
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@natija/protocols": "workspace:*"
+  },
+  "optionalDependencies": {
+    "serialport": "^13.0.0"
+  }
+}

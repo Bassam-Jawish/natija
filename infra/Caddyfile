@@ -1,0 +1,12 @@
+# Caddy obtains and renews the HTTPS certificate for $DOMAIN automatically (Let's Encrypt).
+{$DOMAIN} {
+	encode zstd gzip
+	reverse_proxy app:4000 {
+		# Server-sent events (live updates) must not be buffered.
+		flush_interval -1
+	}
+	header {
+		-Server
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+	}
+}

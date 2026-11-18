@@ -1,0 +1,164 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Design tokens. Light values on :root, dark values on .dark. The lab's brand colour is set at
+   runtime on <html> as --c-brand and only tints the lab identity (logo tile, report letterhead). */
+:root {
+  --c-paper: #f3f4f7;
+  --c-surface: #ffffff;
+  --c-sunken: #eef0f4;
+  --c-raised: #ffffff;
+  --c-ink: #121620;
+  --c-ink-2: #384152;
+  --c-muted: #5f697a;
+  --c-faint: #8a93a3;
+  --c-line: #dde1e8;
+  --c-line-strong: #c3c9d4;
+  --c-accent: #2347b0;
+  --c-accent-hover: #1c3a93;
+  --c-accent-ink: #ffffff;
+  --c-accent-soft: #e7edfb;
+  --c-ok: #1b7748;
+  --c-ok-soft: #e2f3e9;
+  --c-warn: #8a5800;
+  --c-warn-soft: #fbf0d9;
+  --c-crit: #b1251c;
+  --c-crit-soft: #fbe6e3;
+  --c-info: #2d5fa8;
+  --c-info-soft: #e6eef9;
+  --c-violet: #6b4fbf;
+  --c-violet-soft: #eeeafb;
+  --c-brand: #2347b0;
+  --c-focus: #2347b0;
+  --shadow-pop: 0 10px 30px -12px rgb(17 24 39 / 0.25), 0 2px 6px -2px rgb(17 24 39 / 0.08);
+  color-scheme: light;
+}
+
+.dark {
+  --c-paper: #0c0f14;
+  --c-surface: #131821;
+  --c-sunken: #19202a;
+  --c-raised: #1a212c;
+  --c-ink: #e6eaf1;
+  --c-ink-2: #c1c8d4;
+  --c-muted: #8e98a9;
+  --c-faint: #6b7586;
+  --c-line: #262d39;
+  --c-line-strong: #374050;
+  --c-accent: #8aa8ff;
+  --c-accent-hover: #a5bcff;
+  --c-accent-ink: #0c0f14;
+  --c-accent-soft: #1a2646;
+  --c-ok: #56c48d;
+  --c-ok-soft: #10261b;
+  --c-warn: #e3ae48;
+  --c-warn-soft: #2a2110;
+  --c-crit: #ff7b70;
+  --c-crit-soft: #33140f;
+  --c-info: #7fb0f2;
+  --c-info-soft: #13233a;
+  --c-violet: #b4a1ff;
+  --c-violet-soft: #221a3d;
+  --c-focus: #8aa8ff;
+  --shadow-pop: 0 12px 32px -12px rgb(0 0 0 / 0.6), 0 2px 6px -2px rgb(0 0 0 / 0.4);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: 'IBM Plex Sans', 'IBM Plex Sans Arabic', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+  --color-paper: var(--c-paper);
+  --color-surface: var(--c-surface);
+  --color-sunken: var(--c-sunken);
+  --color-raised: var(--c-raised);
+  --color-ink: var(--c-ink);
+  --color-ink-2: var(--c-ink-2);
+  --color-muted: var(--c-muted);
+  --color-faint: var(--c-faint);
+  --color-line: var(--c-line);
+  --color-line-strong: var(--c-line-strong);
+  --color-accent: var(--c-accent);
+  --color-accent-hover: var(--c-accent-hover);
+  --color-accent-ink: var(--c-accent-ink);
+  --color-accent-soft: var(--c-accent-soft);
+  --color-ok: var(--c-ok);
+  --color-ok-soft: var(--c-ok-soft);
+  --color-warn: var(--c-warn);
+  --color-warn-soft: var(--c-warn-soft);
+  --color-crit: var(--c-crit);
+  --color-crit-soft: var(--c-crit-soft);
+  --color-info: var(--c-info);
+  --color-info-soft: var(--c-info-soft);
+  --color-violet: var(--c-violet);
+  --color-violet-soft: var(--c-violet-soft);
+  --color-brand: var(--c-brand);
+
+  /* Tube cap colours: sample types only, never status. */
+  --color-cap-lavender: #8d7bd6;
+  --color-cap-gold: #d2a01c;
+  --color-cap-lightblue: #4c9fd8;
+  --color-cap-grey: #8d949c;
+  --color-cap-green: #3c9a66;
+  --color-cap-red: #c8463e;
+  --color-cap-black: #2b2b2b;
+  --color-cap-yellow: #e3c341;
+  --color-cap-brown: #8a5a3b;
+  --color-cap-white: #e5e7eb;
+
+  --shadow-pop: var(--shadow-pop);
+  --radius-card: 0.75rem;
+}
+
+@layer base {
+  html {
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-paper text-ink font-sans;
+    line-height: 1.5;
+  }
+  :focus-visible {
+    outline: 2px solid var(--c-focus);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--c-accent-soft);
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  /* Numbers, codes and units keep their reading order inside Arabic text. */
+  .ltr-num {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Print: hide app chrome; print pages use their own layout. */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}

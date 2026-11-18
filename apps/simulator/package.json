@@ -1,0 +1,14 @@
+{
+  "name": "@natija/simulator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Virtual analyzers that speak each instrument's protocol family over TCP",
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@natija/protocols": "workspace:*"
+  }
+}

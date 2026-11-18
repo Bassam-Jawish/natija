@@ -1,0 +1,32 @@
+{
+  "name": "@natija/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --clear-screen=false src/main.ts",
+    "start": "tsx src/main.ts",
+    "seed:history": "tsx src/seed/history.ts",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.1.0",
+    "@fastify/helmet": "^13.0.0",
+    "@fastify/multipart": "^10.0.0",
+    "@fastify/rate-limit": "^11.0.0",
+    "@fastify/static": "^10.0.0",
+    "@natija/contracts": "workspace:*",
+    "@natija/db": "workspace:*",
+    "@natija/domain": "workspace:*",
+    "@natija/protocols": "workspace:*",
+    "drizzle-orm": "^0.45.4",
+    "exceljs": "^4.4.0",
+    "fastify": "^5.6.0",
+    "pg": "^8.16.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.15.0",
+    "pino-pretty": "^13.0.0"
+  }
+}

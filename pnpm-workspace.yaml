@@ -1,0 +1,12 @@
+packages:
+  - apps/*
+  - packages/*
+
+# Only these packages may run install scripts.
+allowBuilds:
+  '@embedded-postgres/windows-x64': true
+  '@serialport/bindings-cpp': true
+  esbuild: true
+
+# Never install a package version published less than 14 days ago (supply-chain safety).
+minimumReleaseAge: 20160

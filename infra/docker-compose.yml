@@ -1,0 +1,75 @@
+# One-server deployment: PostgreSQL 18 + Natija + Caddy (automatic HTTPS) + nightly backups.
+#   cp infra/.env.production.example infra/.env   # fill in the secrets
+#   docker compose -f infra/docker-compose.yml --env-file infra/.env up -d --build
+#   docker compose -f infra/docker-compose.yml --env-file infra/.env run --rm app pnpm seed:demo   # demo data (optional)
+
+services:
+  db:
+    image: postgres:18
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
+      POSTGRES_DB: natija
+      APP_DB_PASSWORD: ${APP_DB_PASSWORD:?set APP_DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql
+      - ./db-init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d natija']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@db:5432/natija
+      APP_DATABASE_URL: postgres://natija_app:${APP_DB_PASSWORD}@db:5432/natija
+      APP_SECRET: ${APP_SECRET:?set APP_SECRET}
+      PUBLIC_URL: https://${DOMAIN:?set DOMAIN}
+      DEMO_MODE: ${DEMO_MODE:-true}
+      DEMO_PASSWORD: ${DEMO_PASSWORD:-Natija@2026}
+    volumes:
+      - storage:/data/storage
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on: [app]
+    ports:
+      - '80:80'
+      - '443:443'
+    environment:
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+  backup:
+    image: postgres:18
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      RETAIN_DAYS: ${BACKUP_RETAIN_DAYS:-14}
+    volumes:
+      - backups:/backups
+      - ./backup.sh:/backup.sh:ro
+    entrypoint: ['sh', '/backup.sh']
+
+volumes:
+  pgdata:
+  storage:
+  caddy_data:
+  caddy_config:
+  backups:

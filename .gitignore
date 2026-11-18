@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+.data/
+storage/
+*.log
+.env
+.env.local
+apps/agent/data/
+.vite/
+*.tsbuildinfo
+dist-offline/

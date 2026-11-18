@@ -1,0 +1,358 @@
+{
+  "app": {
+    "name": "Natija",
+    "demoBanner": "Demo lab · fictional data"
+  },
+  "nav": {
+    "groups": {
+      "overview": "Overview",
+      "desk": "Front desk",
+      "lab": "Laboratory",
+      "analyzers": "Analyzers",
+      "finance": "Finance",
+      "insights": "Insights",
+      "settings": "Administration"
+    },
+    "dashboard": "Dashboard",
+    "reception": "Reception",
+    "patients": "Patients",
+    "orders": "Orders",
+    "collection": "Sample collection",
+    "samples": "Sample reception",
+    "worklists": "Worklists",
+    "validation": "Validation",
+    "delivery": "Report delivery",
+    "instruments": "Instruments",
+    "review": "Review queue",
+    "qc": "Quality control",
+    "cashier": "Cashier",
+    "invoices": "Invoices",
+    "approvals": "Approvals",
+    "expenses": "Expenses",
+    "analytics": "Reports",
+    "labSettings": "Lab settings",
+    "catalog": "Test catalog",
+    "pricing": "Prices & payers",
+    "doctors": "Doctors",
+    "staff": "Staff & roles",
+    "messages": "Messages",
+    "audit": "Audit log",
+    "account": "My account"
+  },
+  "actions": {
+    "save": "Save",
+    "saveChanges": "Save changes",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "edit": "Edit",
+    "delete": "Delete",
+    "remove": "Remove",
+    "add": "Add",
+    "create": "Create",
+    "new": "New",
+    "search": "Search",
+    "clear": "Clear",
+    "print": "Print",
+    "export": "Export",
+    "exportExcel": "Export to Excel",
+    "retry": "Try again",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "choose": "Choose…",
+    "refresh": "Refresh",
+    "view": "View",
+    "open": "Open",
+    "signOut": "Sign out",
+    "apply": "Apply",
+    "reset": "Reset",
+    "more": "More",
+    "copy": "Copy",
+    "copied": "Copied",
+    "download": "Download",
+    "upload": "Upload",
+    "selectAll": "Select all",
+    "markAllRead": "Mark all as read",
+    "assign": "Assign",
+    "dismiss": "Dismiss",
+    "send": "Send",
+    "done": "Done",
+    "details": "Details"
+  },
+  "status": {
+    "order": {
+      "registered": "Registered",
+      "collected": "Collected",
+      "in_progress": "In progress",
+      "partial": "Partly released",
+      "completed": "Completed",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled"
+    },
+    "item": {
+      "ordered": "Ordered",
+      "collected": "Collected",
+      "received": "Received",
+      "in_analysis": "In analysis",
+      "resulted": "Resulted",
+      "verified": "Verified",
+      "validated": "Validated",
+      "released": "Released",
+      "rejected": "Rejected",
+      "cancelled": "Cancelled"
+    },
+    "sample": {
+      "pending": "Not collected",
+      "collected": "Collected",
+      "in_transit": "In transit",
+      "received": "Received",
+      "rejected": "Rejected",
+      "in_analysis": "In analysis",
+      "stored": "Stored",
+      "disposed": "Disposed"
+    },
+    "result": {
+      "pending": "Pending",
+      "resulted": "Resulted",
+      "verified": "Verified",
+      "validated": "Validated",
+      "released": "Released"
+    },
+    "invoice": {
+      "open": "Unpaid",
+      "partial": "Partly paid",
+      "paid": "Paid",
+      "void": "Void"
+    },
+    "instrument": {
+      "online": "Online",
+      "offline": "Offline",
+      "error": "Error",
+      "unknown": "No data yet"
+    },
+    "message": {
+      "received": "Received",
+      "processed": "Processed",
+      "duplicate": "Duplicate",
+      "error": "Error",
+      "partial": "Partly matched",
+      "unmatched": "Unmatched"
+    },
+    "priority": {
+      "routine": "Routine",
+      "urgent": "Urgent",
+      "stat": "STAT"
+    },
+    "approval": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected"
+    },
+    "session": {
+      "open": "Open",
+      "closed": "Closed"
+    },
+    "review": {
+      "open": "Open",
+      "assigned": "Assigned",
+      "dismissed": "Dismissed"
+    },
+    "qc": {
+      "accepted": "Accepted",
+      "warning": "Warning",
+      "rejected": "Rejected"
+    },
+    "level": {
+      "L0": "L0 · Simulated",
+      "L1": "L1 · Built to spec",
+      "L2": "L2 · Bench-tested",
+      "L3": "L3 · In service"
+    },
+    "agent": {
+      "pending": "Waiting to enrol",
+      "active": "Active",
+      "revoked": "Revoked"
+    },
+    "outbox": {
+      "pending": "Queued",
+      "simulated": "Simulated",
+      "sent": "Sent",
+      "failed": "Failed"
+    },
+    "delivery": {
+      "sent": "Sent",
+      "simulated": "Simulated",
+      "failed": "Failed",
+      "opened": "Opened"
+    },
+    "user": {
+      "active": "Active",
+      "disabled": "Disabled"
+    }
+  },
+  "flag": {
+    "N": "Normal",
+    "H": "High",
+    "L": "Low",
+    "HH": "Critically high",
+    "LL": "Critically low",
+    "A": "Abnormal"
+  },
+  "errors": {
+    "title": "Something went wrong",
+    "generic": "The request could not be completed. Try again.",
+    "network": "Can't reach the server. Check the connection and try again.",
+    "unauthorized": "Your session has ended. Sign in again.",
+    "forbidden": "You don't have permission for this.",
+    "permission": "Your role doesn't allow this action.",
+    "csrf": "The page is out of date. Reload it and try again.",
+    "not_found": "Not found. It may have been removed.",
+    "validation": "Some fields need attention.",
+    "duplicate": "This already exists.",
+    "reference": "This is linked to other records and can't be changed this way.",
+    "invalid_credentials": "Lab code, username or password is incorrect.",
+    "account_locked": "Too many failed attempts. The account is locked for 15 minutes.",
+    "account_disabled": "This account is disabled. Ask your lab admin.",
+    "lab_suspended": "This lab's account is suspended.",
+    "wrong_password": "Password is incorrect.",
+    "internal": "Server error. The team has been notified; try again shortly.",
+    "http_429": "Too many attempts. Wait a minute and try again.",
+    "rate_limited": "Too many attempts. Wait a minute and try again.",
+    "FST_ERR_RATE_LIMIT_EXCEEDED": "Too many attempts. Wait a minute and try again."
+  },
+  "empty": {
+    "title": "Nothing here yet",
+    "noMatches": "No matches"
+  },
+  "pagination": {
+    "showing": "{{from}}–{{to}} of {{total}}",
+    "previous": "Previous page",
+    "next": "Next page"
+  },
+  "dateRange": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "last7": "Last 7 days",
+    "last30": "Last 30 days",
+    "month": "This month",
+    "custom": "Custom",
+    "from": "From",
+    "to": "To"
+  },
+  "confirm": {
+    "reason": "Reason"
+  },
+  "esign": {
+    "description": "Enter your password to sign. Your name and the time are recorded with this action.",
+    "password": "Your password",
+    "sign": "Sign"
+  },
+  "topbar": {
+    "search": "Search patients, orders or tube barcodes…",
+    "notifications": "Notifications",
+    "noNotifications": "No notifications",
+    "language": "Language",
+    "theme": {
+      "label": "Theme",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "live": "Live updates are on",
+    "offline": "Live updates paused; reconnecting",
+    "liveShort": "Live",
+    "offlineShort": "Offline",
+    "menu": "Menu",
+    "toggleSidebar": "Collapse or expand the sidebar"
+  },
+  "palette": {
+    "title": "Search",
+    "placeholder": "Type a name, phone, patient number, order number or scan a tube…",
+    "patients": "Patients",
+    "orders": "Orders",
+    "samples": "Tubes",
+    "navigation": "Go to",
+    "noResults": "No patient, order or tube matches."
+  },
+  "scan": {
+    "notFound": "No tube or order with code {{code}}."
+  },
+  "auth": {
+    "tagline": "Laboratory information system",
+    "title": "Sign in",
+    "subtitle": "Use the lab code your administrator gave you.",
+    "labCode": "Lab code",
+    "labCodeHint": "For example: yasmin",
+    "username": "Username",
+    "password": "Password",
+    "signIn": "Sign in",
+    "securityNote": "Sessions end after 2 hours without activity. Five wrong passwords lock the account for 15 minutes.",
+    "demoTitle": "Demo accounts",
+    "demoHint": "Three fictional labs. Pick a lab, then a role to sign in as.",
+    "demoPassword": "Password",
+    "useAccount": "Sign in",
+    "demoDisclaimer": "All patients, doctors, insurers and results in the demo are invented."
+  },
+  "account": {
+    "title": "My account",
+    "description": "Your profile, preferences and password.",
+    "profile": "Profile",
+    "name": "Name",
+    "lab": "Lab",
+    "roles": "Roles",
+    "preferences": "Preferences",
+    "password": "Password",
+    "passwordHint": "Changing it signs you out everywhere.",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "newPasswordHint": "At least 8 characters.",
+    "confirmPassword": "Repeat the new password",
+    "mismatch": "The passwords don't match.",
+    "changePassword": "Change password",
+    "passwordChanged": "Password changed. Sign in again."
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "male": "Male",
+    "female": "Female",
+    "sex": "Sex",
+    "age": "Age",
+    "years": "years",
+    "months": "months",
+    "days": "days",
+    "phone": "Phone",
+    "notes": "Notes",
+    "total": "Total",
+    "all": "All",
+    "none": "None",
+    "today": "Today",
+    "loading": "Loading…",
+    "unknown": "Unknown",
+    "optional": "Optional",
+    "required": "Required",
+    "simulated": "Simulated",
+    "by": "by",
+    "at": "at"
+  },
+  "noAccess": {
+    "title": "No access",
+    "description": "Your role doesn't include this page. Ask your lab admin if you need it."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The address may be mistyped, or the page has moved.",
+    "home": "Go to start"
+  },
+  "comingSoon": {
+    "description": "This page is being built."
+  },
+  "mock": {
+    "badge": "Demo data",
+    "badgeHint": "Demo mode: runs with no server and no internet. The data is fictional and kept in this browser only.",
+    "resetData": "Reset demo data",
+    "resetConfirm": "Every change made in this browser will be deleted and the demo data created again. Continue?",
+    "loginHint": "Demo mode: any lab code, user name and password work."
+  }
+}

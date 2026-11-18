@@ -1,0 +1,20 @@
+{
+  "serverUrl": "http://localhost:4310",
+  "token": null,
+  "agentName": "Lab PC",
+  "dataDir": ".",
+  "statusPort": 7300,
+  "heartbeatSeconds": 30,
+  "worklistSeconds": 5,
+  "worklistMaxAgeMinutes": 720,
+  "logTraffic": true,
+  "logLevel": "info",
+  "instruments": [
+    { "code": "XN550", "model": "sysmex_xn", "transport": "tcp_server", "host": "127.0.0.1", "port": 9101 },
+    { "code": "BS430", "model": "mindray_bs430", "transport": "tcp_server", "host": "127.0.0.1", "port": 9102 },
+    { "code": "PURE", "model": "cobas_pure", "transport": "tcp_server", "host": "127.0.0.1", "port": 54000 },
+    { "code": "E411", "model": "cobas_e411", "transport": "tcp_server", "host": "127.0.0.1", "port": 9104 },
+    { "code": "ICHROMA", "model": "ichroma3", "transport": "tcp_server", "host": "127.0.0.1", "port": 9105 },
+    { "code": "EASYSTAT", "model": "medica_easystat", "transport": "tcp_server", "host": "127.0.0.1", "port": 9106, "textIdleMs": 2500 }
+  ]
+}
