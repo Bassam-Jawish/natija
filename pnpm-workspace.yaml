@@ -5,6 +5,7 @@ packages:
 # Only these packages may run install scripts.
 allowBuilds:
   '@embedded-postgres/windows-x64': true
+  '@embedded-postgres/linux-x64': true
   '@serialport/bindings-cpp': true
   esbuild: true
 
